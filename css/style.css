@@ -1,0 +1,281 @@
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #1e1e1e;
+  background: #fafafa;
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #0b3b5e;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #4a4a4a;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #0b3b5e;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+/* ---------- PROJECT FILTERS ---------- */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background: #e6f0f5;
+}
+
+.filter-btn.active {
+  background: #0b3b5e;
+  color: #ffffff;
+  border-color: #0b3b5e;
+}
+
+/* ---------- PROJECT GRID ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.project-card {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: #f4f4f4; /* fallback */
+}
+
+.card-body {
+  padding: 1.2rem;
+}
+
+.card-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-body p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- MODAL ---------- */
+.modal,
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  z-index: 9;
+}
+
+.modal {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 16px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+}
+
+#modal-tech {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.modal[hidden],
+.overlay[hidden] {
+  display: none;
+}
+
+/* ---------- ARTICLES ---------- */
+.articles-grid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.article-card {
+  background: white;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 1.8rem;
+}
+
+.article-card h3 {
+  color: #0b3b5e;
+  margin-bottom: 0.8rem;
+}
+
+.summary {
+  color: #444;
+}
+
+.full-text {
+  margin-top: 1rem;
+  border-top: 1px dashed #ccc;
+  padding-top: 1rem;
+}
+
+.read-more {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: #0b3b5e;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* ---------- CONTACT FORM ---------- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid #0b3b5e;
+  outline-offset: 2px;
+}
+
+.error {
+  color: #c62828;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-top: 0.3rem;
+}
+
+button[type="submit"] {
+  background: #0b3b5e;
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #09425a;
+}
+
+.success {
+  margin-top: 1rem;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  body {
+    padding: 1.5rem 0.8rem;
+  }
+  .filter-buttons {
+    justify-content: center;
+  }
+}

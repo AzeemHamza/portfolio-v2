@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Chen | Portfolio V2</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Muhammad Hamza Azeem</h1>
+    <p>Full‑Stack Developer & UI Enthusiast</p>
+  </header>
+
+  <main>
+    <!-- Project Filtering Section -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">My Projects</h2>
+      <div class="filter-buttons" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Development</button>
+        <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
+        <button class="filter-btn" data-filter="data">Data Analysis</button>
+        <button class="filter-btn" data-filter="other">Other</button>
+      </div>
+      <div class="projects-grid">
+        <!-- dynamically filled by JS -->
+      </div>
+    </section>
+
+    <!-- Blog / Articles Section -->
+    <section id="blog" aria-labelledby="blog-heading">
+      <h2 id="blog-heading">Technical Articles</h2>
+      <div class="articles-grid">
+        <!-- dynamically filled by JS -->
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get In Touch</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="name" required autocomplete="name" />
+          <span class="error" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" required autocomplete="email" />
+          <span class="error" aria-live="polite"></span>
+        </div>
+        <button type="submit">Send Message</button>
+        <div id="success-message" class="success" hidden>Thanks! Your message has been sent.</div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Project Details Modal -->
+  <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title"></h2>
+      <img id="modal-img" src="" alt="" loading="lazy" />
+      <p id="modal-desc"></p>
+      <div id="modal-tech"></div>
+    </div>
+  </div>
+  <div class="overlay" hidden></div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
